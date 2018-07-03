@@ -1,8 +1,6 @@
-# ua_mei_im_speech
+# Multimodal Interaction Assignment: Speech Modality
 
-## Multimodal Interaction Assignment: Speech Modality
-
-### Counter-Strike: Global Offensive Voice Assistant
+## Counter-Strike: Global Offensive Voice Assistant
 
 To run:
 

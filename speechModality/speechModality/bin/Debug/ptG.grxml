@@ -57,7 +57,7 @@
       </item>
       <item>
         Podes comprar-me um <tag>out = "BUY_ME"</tag>
-      </item>
+      </item>      
     </one-of>
   </rule>     
   <rule id="command2">
@@ -65,24 +65,6 @@
       <item>
         <tag>out = "EMPTY"</tag>
       </item>  
-      <item>
-        terroristas <tag>out = "TERROR"</tag>
-      </item>
-      <item>
-        contra-terroristas <tag>out = "CTS"</tag>
-      </item>
-      <item>
-        Cêtês<tag>out = "CTS"</tag>
-      </item>
-      <item>
-        Tês<tag>out = "TERROR"</tag>
-      </item>
-      <item>
-        jogadores <tag>out = "PLAYERS"</tag>
-      </item>
-      <item>
-        gajos <tag>out = "PLAYERS"</tag>
-      </item>
       <item>
         balas<tag>out = "BULLETS"</tag>
       </item>
@@ -107,15 +89,12 @@
       </item>
       <item>
         faltam para o intervalo? <tag>out = "LEFT_HALF"</tag>
+      </item>      
+      <item>
+        custa uma<tag>out = "COST"</tag>
       </item>
       <item>
-        estão mortos? <tag>out = "DEAD"</tag>
-      </item>
-      <item>
-        estão vivos? <tag>out = "ALIVE"</tag>
-      </item>
-      <item>
-        custa <tag>out = "COST"</tag>
+        custa um<tag>out = "COST"</tag>
       </item>  
       <item>
         tenho <tag>out = "HAVE"</tag>

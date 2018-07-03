@@ -5,42 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppGui"
         mc:Ignorable="d"
-        Title="Global Offensive Control App" Height="720" Width="1280">
+        Title="Global Offensive Control App" Height="292" Width="471">
     <Grid>
-        <Image HorizontalAlignment ="Center" VerticalAlignment="Top" Source="maxresdefault.png" Margin="0,0,0,0" Width="1280" Height="720"/>
-        <Rectangle  HorizontalAlignment="Center" Height="1210" VerticalAlignment="Top" Width="100" Margin="586,-222,586,-299" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#D8FDE2B2"/>
-                    <GradientStop Color="#D8CEE5F3" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle  HorizontalAlignment="Center" Height="1210" VerticalAlignment="Top" Width="100" Margin="586,-74,586,-447" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#D8FDE2B2"/>
-                    <GradientStop Color="#D8CEE5F3" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Button Content="Button" HorizontalAlignment="Left" Height="148" Margin="64,64,0,0" VerticalAlignment="Top" Width="148">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="271*"/>
+            <ColumnDefinition Width="192*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment ="Center" VerticalAlignment="Top" Source="maxresdefault.png" Margin="0,1,0,0" Width="463" Height="268" Opacity="0.5" ClipToBounds="True" Grid.ColumnSpan="2"/>
+
+        <Button Content="" HorizontalAlignment="Left" Height="46" Margin="10,10,0,0" VerticalAlignment="Top" Width="46" IsDefault="True">
             <Button.Background>
                 <ImageBrush ImageSource="csgo-logo.png" Stretch="Uniform"/>
             </Button.Background>

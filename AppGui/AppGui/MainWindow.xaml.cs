@@ -19,6 +19,16 @@ namespace AppGui
     {
         public int money;
         public bool IsPlanted;
+        public int round_number;
+        public int bullets;
+        public int max_bullets;
+
+    }
+    static class Prices
+    {
+        public const int ak47 = 2700;
+        public const int awp = 4750;
+        public const int deagle = 700;
 
     }
 
@@ -38,7 +48,7 @@ namespace AppGui
                 Environment.Exit(0);
             }
             
-            gamestate.money = 0;
+            gamestate.money = 800;
             Console.WriteLine("Listening..." + gamestate.money + "\n\n");
             
             //t.Speak("Por favor, espere um pouco enquanto tentamos conectar...");
@@ -47,7 +57,7 @@ namespace AppGui
             mmiC.Start();
 
         }
-        
+
         void OnNewGameState(GameState gs)
         {
             if (!gamestate.IsPlanted &&
@@ -63,8 +73,12 @@ namespace AppGui
             {
                 gamestate.IsPlanted = false;
             }
-        }
+            gamestate.money = gs.Player.State.Money;
+            gamestate.round_number = gs.Map.Round;
+            gamestate.bullets = gs.Player.Weapons.ActiveWeapon.AmmoClip;
+            gamestate.max_bullets = gs.Player.Weapons.ActiveWeapon.AmmoClipMax;
 
+        }
         private void MmiC_Message(object sender, MmiEventArgs e)
         {
             Console.WriteLine(e.Message);
@@ -100,74 +114,7 @@ namespace AppGui
                     // QUANTOS/QUANTAS
                     case "HOWMANY":
                         switch(command2)
-                        {
-                            // TERRORISTAS
-                            case "TERROR":
-                                {
-                                    switch (details)
-                                    {
-                                        // ESTÃO VIVOS
-                                        case "ALIVE":
-                                            {
-                                                // GET ALIVE TERRORISTS
-
-                                                t.Speak(" Estão vivos x terroristas");
-                                                break;
-                                            }
-                                        // ESTÃO MORTOS
-                                        case "DEAD":
-                                            {
-                                                // GET DEAD TERRORISTS
-                                                t.Speak(" Estão mortos x terroristas");
-                                                break;
-                                            }
-                                    }
-                                    break;
-                                }
-                            // CONTRA-TERRORISTAS
-                            case "CTS":
-                                {
-                                    switch (details)
-                                    {
-                                        // ESTÃO VIVOS
-                                        case "ALIVE":
-                                            {
-                                                // GET ALIVE COUNTER-TERRORISTS
-                                                t.Speak(" Estão vivos x contra-terroristas");
-                                                break;
-                                            }
-                                        // ESTÃO MORTOS
-                                        case "DEAD":
-                                            {
-                                                // GET DEAD COUNTER-TERRORISTS
-                                                t.Speak(" Estão mortos x contra-terroristas");
-                                                break;
-                                            }
-                                    }
-                                    break;
-                                }
-                            // JOGADORES
-                            case "PLAYERS":
-                                {
-                                    switch (details)
-                                    {
-                                        // ESTÃO VIVOS
-                                        case "ALIVE":
-                                            {
-                                                // GET ALIVE PLAYERS
-                                                t.Speak(" Estão vivos x ");
-                                                break;
-                                            }
-                                        // ESTÃO MORTOS
-                                        case "DEAD":
-                                            {
-                                                // GET DEAD PLAYERS
-                                                t.Speak(" Estão mortos x ");
-                                                break;
-                                            }
-                                    }
-                                    break;
-                                }
+                        {                            
                             // RONDAS
                             case "ROUNDS":
                                 {
@@ -177,17 +124,31 @@ namespace AppGui
                                         case "LEFT":
                                             {
                                                 // GET ROUNDS LEFT UNTIL END OF GAME
-                                                t.Speak("Faltam x rondas");
+                                                
+                                                t.Speak("Faltam " + (30-gamestate.round_number) + " rondas");
                                                 break;
                                             }
                                         // FALTAM PARA O INTERVALO
                                         case "LEFT_HALF":
                                             {
                                                 // GET ROUNDS LEFT UNTIL HALFTIME
-                                                t.Speak("Faltam x rondas para o intervalo");
+                                                if (gamestate.round_number >= 15)
+                                                    t.Speak(" Já estás na segunda parte do jogo!");
+                                                else if (gamestate.round_number == 0)
+                                                    t.Speak(" O jogo ainda não começou!");
+                                                else
+                                                    t.Speak("Faltam " + (15 - gamestate.round_number) + " rondas para o intervalo");
                                                 break;
                                             }
                                     }
+                                    break;
+                                }
+                            // BALAS TENHO
+                            case "BULLETS":
+                                {
+                                    t.Speak(" Tens " + gamestate.bullets + " balas restantes");
+                                    if (gamestate.bullets <= (0.1 * gamestate.max_bullets))
+                                        t.Speak(" Aconselho-te a recarregar.");
                                     break;
                                 }
                         }
@@ -204,7 +165,7 @@ namespace AppGui
                                         // TENHO
                                         case "HAVE":
                                             {
-                                                t.Speak("Tens x dólares.");
+                                                t.Speak("Tens "+gamestate.money+" dólares.");
                                                 break;
                                             }
                                         // CUSTA UM/UMA
@@ -215,35 +176,152 @@ namespace AppGui
                                                     // AK-47
                                                     case "AK47":
                                                         {
-
-                                                            t.Speak(" Uma AK-47 custa 2700 dólares");
+                                                            t.Speak(" Uma AK-47 custa " + Prices.ak47 + " dólares");
                                                             break;
                                                         }
                                                     // DEAGLE
                                                     case "DEAGLE":
                                                         {
-                                                            t.Speak(" Uma Desert Eagle custa 700 dólares");
+                                                            t.Speak(" Uma Desert Eagle custa " + Prices.deagle + " dólares");
                                                             break;
                                                         }
                                                     // AWP
                                                     case "AWP":
                                                         {
-                                                            t.Speak(" Uma AWP custa 4750 dólares");
+                                                            t.Speak(" Uma AWP custa " + Prices.awp + " dólares");
                                                             break;
                                                         }                                                    
                                                 }
                                                 break;
                                             }
+                                        // FALTA-ME PARA COMPRAR UMA
+                                        case "LEFT":
+                                            {
+                                                switch (weapon)
+                                                {
+                                                    // AK-47
+                                                    case "AK47":
+                                                        {
+                                                            if (gamestate.money < Prices.ak47)
+                                                                t.Speak(" Faltam-te " + (Prices.ak47 - gamestate.money) + " dólares");
+                                                            else
+                                                                t.Speak(" Consegues comprar uma AK-47 e sobrar " + (gamestate.money - Prices.ak47) + " dólares.");
+                                                            break;
+                                                        }
+                                                    // DEAGLE
+                                                    case "DEAGLE":
+                                                        {
+                                                            if (gamestate.money < Prices.deagle)
+                                                                t.Speak(" Faltam-te " + (Prices.deagle - gamestate.money) + " dólares");
+                                                            else
+                                                                t.Speak(" Consegues comprar uma Deagle e sobrar " + (gamestate.money - Prices.deagle) + " dólares.");
+                                                            break;
+                                                        }
+                                                    // AWP
+                                                    case "AWP":
+                                                        {
+                                                            if (gamestate.money < Prices.awp)
+                                                                t.Speak(" Faltam-te " + (Prices.awp - gamestate.money) + " dólares");
+                                                            else
+                                                                t.Speak(" Consegues comprar uma AWP e sobrar " + (gamestate.money - Prices.awp) + " dólares.");
+                                                            break;
+                                                        }
+                                                }
+                                                break;
+                                            }
                                     }
                                     break;
-                                }
-
+                                }                          
                         }
                         break;
+                    // TENHO
+                    case "HAVE":
+                        {
+                            switch(command2)
+                            {
+                                //DINHEIRO
+                                case "MONEY":
+                                    {
+                                        switch(details)
+                                        {
+                                            //SUFICIENTE PARA COMPRAR UM/UMA
+                                            case "ENOUGH_FOR":
+                                                {
+                                                    switch (weapon)
+                                                    {
+                                                        // AK-47
+                                                        case "AK47":
+                                                            {
+                                                                if (gamestate.money < Prices.ak47)
+                                                                    t.Speak(" Não, faltam-te" + (Prices.ak47 - gamestate.money) + " dólares");
+                                                                else
+                                                                    t.Speak(" Tens dinehiro para comprar uma AK-47 e sobrar " + (gamestate.money - Prices.ak47) + " dólares.");
+                                                                break;
+                                                            }
+                                                        // DEAGLE
+                                                        case "DEAGLE":
+                                                            {
+                                                                if (gamestate.money < Prices.deagle)
+                                                                    t.Speak(" Não, faltam-te " + (Prices.deagle - gamestate.money) + " dólares");
+                                                                else
+                                                                    t.Speak(" Tens dinehiro para comprar uma Deagle e sobrar " + (gamestate.money - Prices.deagle) + " dólares.");
+                                                                break;
+                                                            }
+                                                        // AWP
+                                                        case "AWP":
+                                                            {
+                                                                if (gamestate.money < Prices.awp)
+                                                                    t.Speak("Não, faltam-te " + (Prices.awp - gamestate.money) + " dólares");
+                                                                else
+                                                                    t.Speak(" Tens dinehiro para comprar uma AWP e sobrar " + (gamestate.money - Prices.awp) + " dólares.");
+                                                                break;
+                                                            }
+                                                    }
+                                                    break;
+                                                }
+                                        }
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    // COMPRA-ME UM/UMA
+                    case "BUY_ME":
+                        {
+                            switch (weapon)
+                            {
+                                // AK-47
+                                case "AK47":
+                                    {
+                                        if (gamestate.money < Prices.ak47)
+                                            t.Speak(" Não consigo, faltam-te" + (Prices.ak47 - gamestate.money) + " dólares");
+                                        else
+                                            t.Speak(" Compraste uma AK47 e sobraram " + (gamestate.money - Prices.ak47) + " dólares.");
+                                        break;
+                                    }
+                                // DEAGLE
+                                case "DEAGLE":
+                                    {
+                                        if (gamestate.money < Prices.deagle)
+                                            t.Speak(" Não consigo, faltam-te " + (Prices.deagle - gamestate.money) + " dólares");
+                                        else
+                                            t.Speak(" Compraste uma Deagle e sobraram " + (gamestate.money - Prices.deagle) + " dólares.");
+                                        break;
+                                    }
+                                // AWP
+                                case "AWP":
+                                    {
+                                        if (gamestate.money < Prices.awp)
+                                            t.Speak("Não consigo, faltam-te " + (Prices.awp - gamestate.money) + " dólares");
+                                        else
+                                            t.Speak(" Compraste uma AWP e sobraram " + (gamestate.money - Prices.awp) + " dólares.");
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
                 }
-            }
-
-                        
+            }                        
         }
     }
 }
