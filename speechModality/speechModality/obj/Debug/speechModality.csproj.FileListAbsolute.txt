@@ -119,3 +119,7 @@ D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModa
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\obj\Debug\speechModality.csproj.CopyComplete
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\obj\Debug\speechModality.exe
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\obj\Debug\speechModality.pdb
+D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\bin\Debug\speechModality.exe.manifest
+D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\bin\Debug\speechModality.application
+D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\obj\Debug\speechModality.exe.manifest
+D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\speechModality\speechModality\obj\Debug\speechModality.application

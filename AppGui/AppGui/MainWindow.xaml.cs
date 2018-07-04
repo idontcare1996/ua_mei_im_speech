@@ -7,7 +7,8 @@ using Newtonsoft.Json;
 using multimodal;
 using CSGSI;
 using CSGSI.Nodes;
-using WindowsInput;
+//using WindowsInput;
+using System.Windows.Forms;
 using System.Diagnostics;
 
 namespace AppGui
@@ -37,6 +38,7 @@ namespace AppGui
         public const int deagle = 700;
 
     }
+    
 
     public partial class MainWindow : Window
     {
@@ -44,6 +46,9 @@ namespace AppGui
         private Tts t = new Tts();
         private static GameStateListener gsl;
         public Gamestate gamestate = new Gamestate();
+        
+
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -356,7 +361,10 @@ namespace AppGui
                                         if (gamestate.money < Prices.ak47)
                                             t.Speak(" Não consigo, faltam-te" + (Prices.ak47 - gamestate.money) + " dólares");
                                         else
+                                        {
+                                            SendKeys.Send("6");
                                             t.Speak(" Compraste uma A K 47 e sobraram " + (gamestate.money - Prices.ak47) + " dólares.");
+                                        }
                                         break;
                                     }
                                 // DEAGLE
