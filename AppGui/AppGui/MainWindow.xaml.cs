@@ -29,6 +29,8 @@ namespace AppGui
         public int armour;
         public int roundkills;
         public int total_kills;
+        public int total_deaths;
+        public int spectators;
 
     }
     static class Prices
@@ -92,7 +94,8 @@ namespace AppGui
             gamestate.armour = gs.Player.State.Armor;
             gamestate.roundkills = gs.Player.State.RoundKills;
             gamestate.total_kills = gs.Player.MatchStats.Kills;
-            
+            gamestate.total_deaths = gs.Player.MatchStats.Deaths;
+            gamestate.spectators = gs.Map.CurrentSpectators;
 
 
         }
@@ -187,7 +190,18 @@ namespace AppGui
 
                                  break;
                                 }
-                           
+                            // TOTAL DE OBITOS
+                            case "DEATHS":
+                                {
+                                    t.Speak("Morreste " + gamestate.total_deaths);
+                                    break;
+                                }
+                            // ESPETADORES 
+                            case "SPECTATORES":
+                                {
+                                    t.Speak("Temos no total " + gamestate.spectators + "espetadores");
+                                    break;
+                                }
                         }
                         break;
                     // QUANTO/QUANTA
