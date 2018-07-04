@@ -7,12 +7,15 @@ using Newtonsoft.Json;
 using multimodal;
 using CSGSI;
 using CSGSI.Nodes;
-//using WindowsInput;
+using WindowsInput.Native;
+using WindowsInput;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace AppGui
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -70,7 +73,7 @@ namespace AppGui
             mmiC.Start();
 
         }
-
+       
         void OnNewGameState(GameState gs)
         {
             if (!gamestate.IsPlanted &&
@@ -99,12 +102,16 @@ namespace AppGui
 
 
         }
+       
+
         private void MmiC_Message(object sender, MmiEventArgs e)
         {
             Console.WriteLine(e.Message);
             var doc = XDocument.Parse(e.Message);
             var com = doc.Descendants("command").FirstOrDefault().Value;
             dynamic json = JsonConvert.DeserializeObject(com);
+
+            InputSimulator inputsim = new InputSimulator();
             
             double confidence = Double.Parse((string)json.recognized[0].ToString());
             
@@ -376,7 +383,9 @@ namespace AppGui
                                             t.Speak(" Não consigo, faltam-te" + (Prices.ak47 - gamestate.money) + " dólares");
                                         else
                                         {
-                                            SendKeys.Send("6");
+                                            // CÓDIGO PARA DAR INPUT DA TECLA: VK_6 ( Tecla 6 do teclado )
+                                            inputsim.Keyboard.KeyPress(VirtualKeyCode.VK_6);
+
                                             t.Speak(" Compraste uma A K 47 e sobraram " + (gamestate.money - Prices.ak47) + " dólares.");
                                         }
                                         break;
