@@ -95,6 +95,12 @@
       <item>
         mortes <tag>out = "KILLS"</tag>
       </item>  
+      <item>
+        óbitos <tag>out = "DEATHS"</tag>
+      </item>  
+      <item>
+        espetadores <tag>out = "SPECTATORES"</tag>
+      </item>  
     </one-of>
   </rule>
   <rule id="details">
