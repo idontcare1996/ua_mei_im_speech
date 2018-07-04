@@ -26,6 +26,8 @@ namespace AppGui
         public int max_bullets;
         public int health;
         public int armour;
+        public int roundkills;
+        public int total_kills;
 
     }
     static class Prices
@@ -83,6 +85,8 @@ namespace AppGui
             gamestate.max_bullets = gs.Player.Weapons.ActiveWeapon.AmmoClipMax;
             gamestate.health = gs.Player.State.Health;
             gamestate.armour = gs.Player.State.Armor;
+            gamestate.roundkills = gs.Player.State.RoundKills;
+            gamestate.total_kills = gs.Player.MatchStats.Kills;
             
 
 
@@ -159,6 +163,26 @@ namespace AppGui
                                         t.Speak(" Aconselho-te a recarregar.");
                                     break;
                                 }
+                            // MORTES NUMA RONDA
+                            case "KILLS":
+                                {
+                                    switch(details)
+                                    {
+                                        case "HAVE_ROUND":
+                                            {
+                                                t.Speak("Mataste " + gamestate.roundkills + " nesta ronda");
+                                                break;
+                                            }
+                                        case "HAVE":
+                                            {
+                                                t.Speak("Tens um total de " + gamestate.total_kills + " mortes");
+                                                break;
+                                            }
+                                    }
+
+                                 break;
+                                }
+                           
                         }
                         break;
                     // QUANTO/QUANTA
