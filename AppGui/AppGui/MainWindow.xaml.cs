@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using multimodal;
 using CSGSI;
 using CSGSI.Nodes;
+using WindowsInput;
+using System.Diagnostics;
 
 namespace AppGui
 {
@@ -205,7 +207,7 @@ namespace AppGui
                                                             if (gamestate.money < Prices.ak47)
                                                                 t.Speak(" Faltam-te " + (Prices.ak47 - gamestate.money) + " dólares");
                                                             else
-                                                                t.Speak(" Consegues comprar uma AK-47 e sobrar " + (gamestate.money - Prices.ak47) + " dólares.");
+                                                                t.Speak(" Consegues comprar uma A K 47 e sobrar " + (gamestate.money - Prices.ak47) + " dólares.");
                                                             break;
                                                         }
                                                     // DEAGLE
@@ -223,7 +225,7 @@ namespace AppGui
                                                             if (gamestate.money < Prices.awp)
                                                                 t.Speak(" Faltam-te " + (Prices.awp - gamestate.money) + " dólares");
                                                             else
-                                                                t.Speak(" Consegues comprar uma AWP e sobrar " + (gamestate.money - Prices.awp) + " dólares.");
+                                                                t.Speak(" Consegues comprar uma A W P e sobrar " + (gamestate.money - Prices.awp) + " dólares.");
                                                             break;
                                                         }
                                                 }
@@ -296,7 +298,7 @@ namespace AppGui
                                         if (gamestate.money < Prices.ak47)
                                             t.Speak(" Não consigo, faltam-te" + (Prices.ak47 - gamestate.money) + " dólares");
                                         else
-                                            t.Speak(" Compraste uma AK47 e sobraram " + (gamestate.money - Prices.ak47) + " dólares.");
+                                            t.Speak(" Compraste uma A K 47 e sobraram " + (gamestate.money - Prices.ak47) + " dólares.");
                                         break;
                                     }
                                 // DEAGLE
@@ -314,10 +316,17 @@ namespace AppGui
                                         if (gamestate.money < Prices.awp)
                                             t.Speak("Não consigo, faltam-te " + (Prices.awp - gamestate.money) + " dólares");
                                         else
-                                            t.Speak(" Compraste uma AWP e sobraram " + (gamestate.money - Prices.awp) + " dólares.");
+                                            t.Speak(" Compraste uma A W P e sobraram " + (gamestate.money - Prices.awp) + " dólares.");
                                         break;
                                     }
                             }
+                            break;
+                        }
+                    // ABRE-ME O CSGO
+                    case "OPEN_CSGO":
+                        {
+                            t.Speak(" Abrindo o Counter Strike ");
+                            Process.Start(@"C:\Program Files (x86)\Steam\Steam.exe", "-applaunch 730 -console +exec autoexec +exec autoexec");
                             break;
                         }
                 }

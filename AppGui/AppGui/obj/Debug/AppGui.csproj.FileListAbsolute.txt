@@ -118,3 +118,5 @@ D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\obj\Debug\A
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.csproj.CopyComplete
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.exe
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.pdb
+D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\bin\Debug\WindowsInput.dll
+D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\bin\Debug\WindowsInput.xml

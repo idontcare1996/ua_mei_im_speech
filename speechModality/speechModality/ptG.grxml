@@ -26,6 +26,12 @@
         Quantos<tag>out = "HOWMANY"</tag>
       </item>
       <item>
+        Abre o Counter-Strike por favor<tag>out = "OPEN_CSGO"</tag>
+      </item>
+      <item>
+        Abre o Counter-Strike<tag>out = "OPEN_CSGO"</tag>
+      </item>
+      <item>
         Quanto<tag>out = "HOWMUCH"</tag>
       </item>
       <item>
