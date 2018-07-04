@@ -24,6 +24,7 @@ namespace AppGui
         public int round_number;
         public int bullets;
         public int max_bullets;
+        public int health;
 
     }
     static class Prices
@@ -51,7 +52,7 @@ namespace AppGui
             }
             
             gamestate.money = 800;
-            Console.WriteLine("Listening..." + gamestate.money + "\n\n");
+            Console.WriteLine("Listening... n\n");
             
             //t.Speak("Por favor, espere um pouco enquanto tentamos conectar...");
             mmiC = new MmiCommunication("localhost",8000, "User1", "GUI");
@@ -68,7 +69,7 @@ namespace AppGui
                gs.Previously.Round.Bomb == BombState.Undefined)
             {
                 Console.WriteLine("Bomb has been planted.");
-                t.Speak("A bomba foi plantada, tens 45 segundos para a desligar.");
+                t.Speak("A bomba foi plantada, explodirá em 45 segundos");
                 gamestate.IsPlanted = true;
             }
             else if (gamestate.IsPlanted && gs.Round.Phase == RoundPhase.FreezeTime)
@@ -79,6 +80,9 @@ namespace AppGui
             gamestate.round_number = gs.Map.Round;
             gamestate.bullets = gs.Player.Weapons.ActiveWeapon.AmmoClip;
             gamestate.max_bullets = gs.Player.Weapons.ActiveWeapon.AmmoClipMax;
+            gamestate.health = gs.Player.State.Health;
+            
+
 
         }
         private void MmiC_Message(object sender, MmiEventArgs e)
@@ -155,7 +159,7 @@ namespace AppGui
                                 }
                         }
                         break;
-                    // QUANTO
+                    // QUANTO/QUANTA
                     case "HOWMUCH":
                         switch(command2)
                         {
@@ -233,7 +237,21 @@ namespace AppGui
                                             }
                                     }
                                     break;
-                                }                          
+                                }
+                            // VIDA
+                            case "HEALTH":
+                                {
+                                    switch(details)
+                                    {
+                                        // TENHO
+                                        case "HAVE":
+                                            {
+                                                t.Speak("Tens " + gamestate.health + "pontos de vida");
+                                                break;
+                                            }
+                                    }
+                                    break;
+                                }
                         }
                         break;
                     // TENHO

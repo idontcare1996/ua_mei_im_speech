@@ -35,6 +35,9 @@
         Quanto<tag>out = "HOWMUCH"</tag>
       </item>
       <item>
+        Quanta<tag>out = "HOWMUCH"</tag>
+      </item>
+      <item>
         Quantas<tag>out = "HOWMANY"</tag>
       </item>
       <item>
@@ -82,7 +85,10 @@
       </item>    
       <item>
         rondas <tag>out = "ROUNDS"</tag>
-      </item>      
+      </item>
+      <item>
+        vida <tag>out = "HEALTH"</tag>
+      </item>     
     </one-of>
   </rule>
   <rule id="details">
