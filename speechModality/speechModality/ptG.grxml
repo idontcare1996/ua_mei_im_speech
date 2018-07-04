@@ -88,7 +88,10 @@
       </item>
       <item>
         vida <tag>out = "HEALTH"</tag>
-      </item>     
+      </item>
+      <item>
+        armadura <tag>out = "ARMOUR"</tag>
+      </item>   
     </one-of>
   </rule>
   <rule id="details">

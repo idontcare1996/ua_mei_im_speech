@@ -25,6 +25,7 @@ namespace AppGui
         public int bullets;
         public int max_bullets;
         public int health;
+        public int armour;
 
     }
     static class Prices
@@ -81,6 +82,7 @@ namespace AppGui
             gamestate.bullets = gs.Player.Weapons.ActiveWeapon.AmmoClip;
             gamestate.max_bullets = gs.Player.Weapons.ActiveWeapon.AmmoClipMax;
             gamestate.health = gs.Player.State.Health;
+            gamestate.armour = gs.Player.State.Armor;
             
 
 
@@ -247,6 +249,20 @@ namespace AppGui
                                         case "HAVE":
                                             {
                                                 t.Speak("Tens " + gamestate.health + "pontos de vida");
+                                                break;
+                                            }
+                                    }
+                                    break;
+                                }
+                            // ARMADURA
+                            case "ARMOUR":
+                                {
+                                    switch (details)
+                                    {
+                                        // TENHO
+                                        case "HAVE":
+                                            {
+                                                t.Speak("Tens " + gamestate.armour + "pontos de armadura");
                                                 break;
                                             }
                                     }
