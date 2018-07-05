@@ -8,6 +8,7 @@ using multimodal;
 using CSGSI;
 using CSGSI.Nodes;
 using WindowsInput;
+using WindowsInput.Native;
 using System.Diagnostics;
 
 namespace AppGui
@@ -46,6 +47,8 @@ namespace AppGui
         private Tts t = new Tts();
         private static GameStateListener gsl;
         public Gamestate gamestate = new Gamestate();
+
+        public InputSimulator inputsim = new InputSimulator();
         public MainWindow()
         {
             InitializeComponent();
