@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <PublishUrlHistory />
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />
@@ -12,6 +12,6 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup>
-    <ReferencePath>D:\UNIVERSIDADE\IM\ua_mei_im\ua_mei_im_speech\</ReferencePath>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
 </Project>

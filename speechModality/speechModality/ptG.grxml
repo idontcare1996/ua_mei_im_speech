@@ -163,9 +163,24 @@
       <item>
         Desert Eagle<tag>out = "DEAGLE"</tag>
       </item>
+       <item>
+        Defuse<tag>out = "DEFUSE"</tag>
+      </item>
       <item>
         A W P <tag>out = "AWP"</tag>
-      </item>      
+      </item> 
+      <item>
+        Colete e capacete <tag>out = "KELVAR_CAP"</tag>
+      </item>  
+      <item>
+        P250 <tag>out = "P250"</tag>
+      </item>    
+        <item>
+        M P 7 <tag>out = "MP7"</tag>
+      </item>  
+       <item>
+        U M P 45 <tag>out = "UMP45"</tag>
+      </item>           
     </one-of>
   </rule> 
        
