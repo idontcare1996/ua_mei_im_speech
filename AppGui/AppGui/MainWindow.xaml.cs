@@ -371,7 +371,12 @@ namespace AppGui
                                         if (gamestate.money < Prices.ak47)
                                             t.Speak(" Não consigo, faltam-te" + (Prices.ak47 - gamestate.money) + " dólares");
                                         else
+                                        {
+                                            // CÓDIGO PARA DAR INPUT DA TECLA: VK_6 ( Tecla 6 do teclado )
+                                            inputsim.Keyboard.KeyPress(VirtualKeyCode.VK_6);
+
                                             t.Speak(" Compraste uma A K 47 e sobraram " + (gamestate.money - Prices.ak47) + " dólares.");
+                                        }
                                         break;
                                     }
                                 // DEAGLE
