@@ -7,12 +7,15 @@ using Newtonsoft.Json;
 using multimodal;
 using CSGSI;
 using CSGSI.Nodes;
-using WindowsInput;
 using WindowsInput.Native;
+using WindowsInput;
+using System.Windows.Forms;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace AppGui
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -40,6 +43,7 @@ namespace AppGui
         public const int deagle = 700;
 
     }
+    
 
     public partial class MainWindow : Window
     {
@@ -47,8 +51,9 @@ namespace AppGui
         private Tts t = new Tts();
         private static GameStateListener gsl;
         public Gamestate gamestate = new Gamestate();
+        
 
-        public InputSimulator inputsim = new InputSimulator();
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -68,7 +73,7 @@ namespace AppGui
             mmiC.Start();
 
         }
-
+       
         void OnNewGameState(GameState gs)
         {
             if (!gamestate.IsPlanted &&
@@ -94,16 +99,19 @@ namespace AppGui
             gamestate.total_kills = gs.Player.MatchStats.Kills;
             gamestate.total_deaths = gs.Player.MatchStats.Deaths;
             gamestate.spectators = gs.Map.CurrentSpectators;
-            
 
 
         }
+       
+
         private void MmiC_Message(object sender, MmiEventArgs e)
         {
             Console.WriteLine(e.Message);
             var doc = XDocument.Parse(e.Message);
             var com = doc.Descendants("command").FirstOrDefault().Value;
             dynamic json = JsonConvert.DeserializeObject(com);
+
+            InputSimulator inputsim = new InputSimulator();
             
             double confidence = Double.Parse((string)json.recognized[0].ToString());
             
