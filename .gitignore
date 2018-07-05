@@ -238,3 +238,5 @@ WiX.Toolset.DummyFile.txt
 nunit-*.xml
 GitHubVS.sln.DotSettings
 AppGui/.vs/
+AppGui/AppGui/bin/
+AppGui/AppGui/obj
