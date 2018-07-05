@@ -240,3 +240,6 @@ GitHubVS.sln.DotSettings
 AppGui/.vs/
 AppGui/AppGui/bin/
 AppGui/AppGui/obj
+speechModality/.vs/
+speechModality/speechModality/bin/
+speechModality/speechModality/obj
