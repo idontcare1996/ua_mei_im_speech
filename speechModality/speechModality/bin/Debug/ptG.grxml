@@ -35,6 +35,9 @@
         Quanto<tag>out = "HOWMUCH"</tag>
       </item>
       <item>
+        Quanta<tag>out = "HOWMUCH"</tag>
+      </item>
+      <item>
         Quantas<tag>out = "HOWMANY"</tag>
       </item>
       <item>
@@ -82,7 +85,22 @@
       </item>    
       <item>
         rondas <tag>out = "ROUNDS"</tag>
-      </item>      
+      </item>
+      <item>
+        vida <tag>out = "HEALTH"</tag>
+      </item>
+      <item>
+        armadura <tag>out = "ARMOUR"</tag>
+      </item>   
+      <item>
+        mortes <tag>out = "KILLS"</tag>
+      </item>  
+      <item>
+        óbitos <tag>out = "DEATHS"</tag>
+      </item>  
+      <item>
+        espetadores <tag>out = "SPECTATORES"</tag>
+      </item>  
     </one-of>
   </rule>
   <rule id="details">
@@ -104,6 +122,9 @@
       </item>  
       <item>
         tenho <tag>out = "HAVE"</tag>
+      </item>  
+       <item>
+        tenho nesta ronda <tag>out = "HAVE_ROUND"</tag>
       </item>  
       <item>
         falta <tag>out = "LEFT"</tag>

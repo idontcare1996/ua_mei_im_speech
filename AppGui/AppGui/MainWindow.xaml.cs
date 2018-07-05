@@ -91,6 +91,7 @@ namespace AppGui
             gamestate.total_kills = gs.Player.MatchStats.Kills;
             gamestate.total_deaths = gs.Player.MatchStats.Deaths;
             gamestate.spectators = gs.Map.CurrentSpectators;
+            
 
 
         }

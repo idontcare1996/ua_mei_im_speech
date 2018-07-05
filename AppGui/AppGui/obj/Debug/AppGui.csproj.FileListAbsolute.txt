@@ -120,3 +120,27 @@ D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\obj\Debug\A
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.pdb
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\bin\Debug\WindowsInput.dll
 D:\UNIVERSIDADE\IM\Assignment_02_CSGO\ua_mei_im_speech\AppGui\AppGui\bin\Debug\WindowsInput.xml
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\AppGui.exe.config
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\AppGui.exe
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\AppGui.pdb
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\CSGSI.dll
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\Microsoft.Speech.dll
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\WindowsInput.dll
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\CSGSI.xml
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\mmisharp.pdb
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\bin\Debug\WindowsInput.xml
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.csprojResolveAssemblyReference.cache
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\MainWindow.g.cs
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\App.g.cs
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui_MarkupCompile.cache
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui_MarkupCompile.lref
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\MainWindow.baml
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.g.resources
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.Properties.Resources.resources
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.csproj.GenerateResource.cache
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.csproj.CoreCompileInputs.cache
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.csproj.CopyComplete
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.exe
+C:\Users\Joaoc\OneDrive\Área de Trabalho\IM\ua_mei_im_speech\AppGui\AppGui\obj\Debug\AppGui.pdb
