@@ -59,9 +59,9 @@ namespace AppGui
         private Tts t = new Tts();
         private static GameStateListener gsl;
         public Gamestate gamestate = new Gamestate();
+        
 
-       
-       
+      
         public MainWindow()
         {
             InitializeComponent();

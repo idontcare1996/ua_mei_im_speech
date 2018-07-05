@@ -237,9 +237,17 @@ NuGetBuild
 WiX.Toolset.DummyFile.txt
 nunit-*.xml
 GitHubVS.sln.DotSettings
+
 AppGui/.vs/
+
 AppGui/AppGui/bin/
+
 AppGui/AppGui/obj
+
 speechModality/.vs/
+
 speechModality/speechModality/bin/
+speechModality/speechModality/bin/*
+!speechModality/speechModality/bin/*.dll
+
 speechModality/speechModality/obj
