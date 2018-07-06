@@ -20,11 +20,9 @@
   * **WindowsInput.dll**
   * **Newtonsoft.Json.dll**
 
-<<<<<<< HEAD
 * Run **mmiframeworkV2.jar** with ```java -jar mmiframeworkV2.jar```.
 
-* Open **Counter-Stike:Global Offensive** in *borderless fullscreen*.
-=======
+
 ### To run
 
 1. Open **AppGUI** and **SpeechModality** Visual Studio projects, and execute each one of them.
@@ -32,4 +30,3 @@
 2. Run **mmiframeworkV2.jar** with ```java -jar mmiframeworkV2.jar```.
 
 3. Open **Counter-Stike:Global Offensive** in borderless fullscreen ***or*** say: ***"Abre o Counter-Strike"*** to the microphone.
->>>>>>> 9b87fc8743c70e934d270072a515ab8b791738fb
