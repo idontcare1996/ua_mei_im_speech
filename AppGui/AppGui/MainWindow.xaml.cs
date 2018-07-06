@@ -172,6 +172,8 @@ namespace AppGui
                        
             else
             {
+                textbox_output_mmi.Text = " " + command + " " + command2 + " " + details + " " + weapon + " ";
+
                 switch (command)
                 {
                     // QUANTOS/QUANTAS
